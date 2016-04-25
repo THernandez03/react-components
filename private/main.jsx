@@ -13,7 +13,10 @@ import * as reducers from './components/dumb/Welcome/reducers';
 const store = createStore(
   combineReducers({ ...reducers, routing: routerReducer })
 , {}
-, typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+, (
+    typeof window === 'object' &&
+    typeof window.devToolsExtension !== 'undefined'
+  ) ? window.devToolsExtension() : (fn) => { return fn }
 );
 const history = syncHistoryWithStore(browserHistory, store);
 
