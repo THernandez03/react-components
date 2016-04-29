@@ -153,6 +153,7 @@
       "after": false,
       "overrides": {
         "import": { "before": false, "after": true },
+        "export": { "before": false, "after": true },
         "return": { "before": false, "after": true },
         "switch": { "before": false, "after": true },
         "const": { "before": false, "after": true },
