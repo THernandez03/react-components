@@ -3,10 +3,10 @@ import express from 'express';
 import hogan from 'hogan-express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
-import Server from './Server';
-import config from '../config/express-server';
-import * as envs from '../config/envs';
-import Router from './Router';
+import Server from '~/classes/Server';
+import Router from '~/classes/Router';
+import config from '~/config/express-server';
+import * as envs from '~/config/envs';
 
 /**
  * Describe a Express server

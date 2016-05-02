@@ -1,8 +1,8 @@
 import express from 'express';
-import Class from './Class';
-import { mixin } from '../utils/mixin';
-import packageJson from '../../package.json';
-import webpackConfig from '../config/webpack';
+import Class from '~/classes/Class';
+import { mixin } from '~/utils/mixin';
+import packageJson from '~/../package.json';
+import webpackConfig from '~/config/webpack';
 
 /**
  * [mixin description]

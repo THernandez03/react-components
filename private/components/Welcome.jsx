@@ -1,18 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addText, toggleStatus } from './actions';
+import actions from '~/actions/Welcome';
 
 /**
- * fdsf
+ * Welcome View class
  */
-class Main extends React.Component {
+class Welcome extends React.Component {
   static propTypes = {
     isEnabled: React.PropTypes.bool
   , inputText: React.PropTypes.string
   , inputTextToAdd: React.PropTypes.string
   , inputPlaceholder: React.PropTypes.string
   , onInputClick: React.PropTypes.func
-  , onInputChange: React.PropTypes.func
   , onButtonClick: React.PropTypes.func
   };
   static defaultProps = {
@@ -20,6 +19,8 @@ class Main extends React.Component {
   , inputText: 'Default: Text'
   , inputTextToAdd: 'Default: TextToAdd'
   , inputPlaceholder: 'Default: Placeholder'
+  , onInputClick: () => {}
+  , onButtonClick: () => {}
   };
   static contextTypes = {
     history: React.PropTypes.object.isRequired
@@ -40,7 +41,6 @@ class Main extends React.Component {
           value={props.inputText}
           placeholder={props.inputPlaceholder}
           onClick={() => { props.onInputClick(props.inputTextToAdd); }}
-          onChange={() => { props.onInputChange(); }}
         />
         <button
           Enable
@@ -56,15 +56,14 @@ class Main extends React.Component {
 export default connect(
   (state) => {
     return {
-      inputText: state.getText
-    , isEnabled: state.getStatus
-    }
+      inputText: state.setText
+    , isEnabled: state.setStatus
+    };
   }
 , (dispatch) => {
     return {
-      onInputClick: (text) => { dispatch(addText(text)); }
-    , onInputChange: () => {}
-    , onButtonClick: () => { dispatch(toggleStatus()); }
-    }
+      onInputClick: (...args) => { dispatch(actions.onInputClick(args)); }
+    , onButtonClick: (...args) => { dispatch(actions.onButtonClick(args)); }
+    };
   }
-)(Main);
+)(Welcome);

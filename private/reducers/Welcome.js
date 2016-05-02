@@ -1,4 +1,4 @@
-export const getText = (state = '', action) => {
+export const setText = (state = '', action) => {
   switch (action.type) {
     case 'ADD_TEXT':
       return `${state} ${action.text}`;
@@ -9,7 +9,7 @@ export const getText = (state = '', action) => {
   }
 };
 
-export const getStatus = (state = false, action) => {
+export const setStatus = (state = false, action) => {
   switch (action.type) {
     case 'TOGGLE_STATUS':
       return !state;
@@ -21,3 +21,8 @@ export const getStatus = (state = false, action) => {
       return state;
   }
 };
+
+export default {
+  setText
+, setStatus
+}

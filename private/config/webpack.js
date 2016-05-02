@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import * as envs from './envs';
+import * as envs from '~/config/envs';
 
 const configs = {
   local: {
@@ -13,7 +13,10 @@ const configs = {
   }
 };
 const defaultConfig = {
-  entry: {
+  node: {
+    fs: false
+  }
+, entry: {
     main: ['./private/main.jsx']
   }
 , output: {

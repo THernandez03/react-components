@@ -1,5 +1,5 @@
 import React from 'react';
-import Welcome from '../dumb/Welcome/';
+import Welcome from '~/components/Welcome';
 
 /**
  * Main class
@@ -23,9 +23,9 @@ export default class Main extends React.Component {
       <div id='wrapper'>
         <Welcome
           isEnabled={false}
-          inputText='Prop: Text'
-          inputTextToAdd='Prop: TextToAdd'
-          inputPlaceholder='Prop: Placeholder'
+          inputText='Prop - Text'
+          inputTextToAdd='Prop - Add'
+          inputPlaceholder='Prop - Placeholder'
         />
       </div>
     )
