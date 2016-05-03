@@ -1,5 +1,6 @@
-import Welcome from '~/reducers/Welcome';
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux'
 
-export default {
-  ...Welcome
-}
+export default combineReducers({
+  routing: routerReducer
+})

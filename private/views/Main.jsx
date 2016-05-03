@@ -1,5 +1,4 @@
 import React from 'react';
-import Welcome from '~/components/Welcome';
 
 /**
  * Main class
@@ -21,12 +20,7 @@ export default class Main extends React.Component {
   render(){
     return (
       <div id='wrapper'>
-        <Welcome
-          isEnabled={false}
-          inputText='Prop - Text'
-          inputTextToAdd='Prop - Add'
-          inputPlaceholder='Prop - Placeholder'
-        />
+        <h1>Hello World</h1>
       </div>
     )
   }

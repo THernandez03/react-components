@@ -1,8 +1,18 @@
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { createMemoryHistory } from 'react-router';
+import { createStore, applyMiddleware } from 'redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import thunk from 'redux-thunk';
+
 import express from 'express';
-import Class from '~/classes/Class';
 import { mixin } from '~/utils/mixin';
 import packageJson from '~/../package.json';
 import webpackConfig from '~/config/webpack';
+import Class from '~/classes/Class';
+
+import Reducers from '~/reducers/';
+import App from '~/components/App';
 
 /**
  * [mixin description]
@@ -23,43 +33,29 @@ export default class Router extends mixin(Class, express.Router){
     , ...options
     };
     super(options);
-    const router = this.set('router', this.supers[0]);
+    const router = this.supers[0];
 
-    this.addRoutes('get'
-    , '/version'
-    , 'getVersion'
-    , 'sendResponse'
-    );
-    this.addRoutes('get'
-    , '/*'
-    , (req, res) => {
-        res.render('index', { path: webpackConfig.output.publicPath });
-      }
-    );
+    router.get('/version', this.getVersion.bind(this));
+    router.get('/*', (req, res) => {
+      const memoryHistory = createMemoryHistory(req.path);
+      const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+      const store = createStoreWithMiddleware(Reducers);
+      const history = syncHistoryWithStore(memoryHistory, store);
+      res.render('index', {
+        path: webpackConfig.output.publicPath
+      , App: renderToString(<App store={store} history={history}/>)
+      , initialState: `
+          <script>
+            window.__InitialState = ${JSON.stringify(store.getState())}
+          </script>
+        `
+      });
+    });
+    router.get('/*', (req, res) => {
+      res.render('index', { path: webpackConfig.output.publicPath });
+    });
 
     return router;
-  }
-
-
-  addRoutes(method, url, ...middlewares){
-    const router = this.get('router');
-    router[method](...[url, ...middlewares.map((middleware) => {
-      return (...args) => {
-        const fn = this[middleware] || middleware;
-        return fn.apply(this, args);
-      }
-    })]);
-  }
-
-  /**
-   * [sendResponse description]
-   * @author THernandez03
-   * @param  {[type]} req [description]
-   * @param  {[type]} res [description]
-   * @return {[type]} [description]
-   */
-  sendResponse(req, res) {
-    return res.status(200).json(req.response);
   }
 
   /**
@@ -67,11 +63,10 @@ export default class Router extends mixin(Class, express.Router){
    * @author THernandez03
    * @param  {Function} req [description]
    * @param  {Function} res [description]
-   * @param  {Function} next [description]
    * @return {[type]} [description]
    */
-  getVersion(req, res, next) {
-    req.response = {
+  getVersion(req, res) {
+    res.status(200).json({
       started: this.get('started').toISOString()
     , uptime: (new Date()).getTime() - this.get('started').getTime()
     , version: packageJson.version
@@ -80,7 +75,6 @@ export default class Router extends mixin(Class, express.Router){
       , email: packageJson.author.email
       , url: packageJson.author.url
       }
-    };
-    next();
+    });
   }
 }
