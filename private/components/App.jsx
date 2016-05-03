@@ -26,6 +26,7 @@ export default class App extends React.Component {
     return (
       <Provider store={this.props.store}>
         <Router history={this.props.history}>
+          <Route path='/server/' component={Views.Main}/>
           <Route path='/' component={Views.Main}/>
           <Route path='*' component={Views.E404}/>
         </Router>

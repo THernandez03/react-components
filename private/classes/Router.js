@@ -36,7 +36,7 @@ export default class Router extends mixin(Class, express.Router){
     const router = this.supers[0];
 
     router.get('/version', this.getVersion.bind(this));
-    router.get('/*', (req, res) => {
+    router.get('/server/*', (req, res) => {
       const memoryHistory = createMemoryHistory(req.path);
       const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
       const store = createStoreWithMiddleware(Reducers);
