@@ -34,6 +34,7 @@ export default class Router extends mixin(Class, express.Router){
     };
     super(options);
     const router = this.supers[0];
+    const devPath = options.devPath;
 
     router.get('/version', this.getVersion.bind(this));
     router.get('/server/*', (req, res) => {
@@ -42,7 +43,7 @@ export default class Router extends mixin(Class, express.Router){
       const store = createStoreWithMiddleware(Reducers);
       const history = syncHistoryWithStore(memoryHistory, store);
       res.render('index', {
-        path: webpackConfig.output.publicPath
+        path: devPath
       , App: renderToString(<App store={store} history={history}/>)
       , initialState: `
           <script>
@@ -52,7 +53,7 @@ export default class Router extends mixin(Class, express.Router){
       });
     });
     router.get('/*', (req, res) => {
-      res.render('index', { path: webpackConfig.output.publicPath });
+      res.render('index', { path: devPath });
     });
 
     return router;
