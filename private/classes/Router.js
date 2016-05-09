@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { createMemoryHistory } from 'react-router';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
@@ -39,8 +39,7 @@ export default class Router extends mixin(Class, express.Router){
     router.get('/version', this.getVersion.bind(this));
     router.get('/server/*', (req, res) => {
       const memoryHistory = createMemoryHistory(req.path);
-      const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-      const store = createStoreWithMiddleware(Reducers);
+      const store = createStore(Reducers, compose(applyMiddleware(thunk)));
       const history = syncHistoryWithStore(memoryHistory, store);
       res.render('index', {
         path: devPath
