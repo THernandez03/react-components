@@ -1,9 +1,8 @@
 import React from 'react';
-
 /**
- * Main class
+ * NoMatch class
  */
-export default class Main extends React.Component {
+export default class E404 extends React.Component {
   static propTypes = {
   };
   static defaultProps = {
@@ -19,8 +18,8 @@ export default class Main extends React.Component {
    */
   render(){
     return (
-      <div id='wrapper'>
-        <h1>Hello World</h1>
+      <div>
+        <h1>Error 404</h1>
       </div>
     )
   }

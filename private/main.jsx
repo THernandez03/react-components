@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import thunk from 'redux-thunk';
 
 import Reducers from '~/reducers/';
-import App from '~/components/App';
+import App from '~/App';
 
 const initialState = window.__InitialState;
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);

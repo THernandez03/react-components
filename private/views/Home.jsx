@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
+
 /**
- * NoMatch class
+ * Main class
  */
-export default class E404 extends React.Component {
+export default class Main extends React.Component {
   static propTypes = {
   };
   static defaultProps = {
@@ -18,7 +20,9 @@ export default class E404 extends React.Component {
    */
   render(){
     return (
-      <div><h1>Error 404</h1></div>
+      <Link to='/about'>
+        <h1>Hello Home</h1>
+      </Link>
     )
   }
 }

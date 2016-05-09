@@ -12,7 +12,7 @@ import webpackConfig from '~/config/webpack';
 import Class from '~/classes/Class';
 
 import Reducers from '~/reducers/';
-import App from '~/components/App';
+import App from '~/App';
 
 /**
  * [mixin description]

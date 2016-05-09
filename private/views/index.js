@@ -1,7 +1,7 @@
-import Main from '~/views/Main';
-import E404 from '~/views/E404';
+import Home from '~/views/Home';
+import About from '~/views/About';
 
 export default {
-  Main
-, E404
+  About
+, Home
 }

@@ -2,16 +2,6 @@ import path from 'path';
 import webpack from 'webpack';
 import * as envs from '~/config/envs';
 
-const configs = {
-  local: {
-    host: '127.0.0.1'
-  , port: 4000
-  , plugins: [
-      new webpack.HotModuleReplacementPlugin()
-    , new webpack.NoErrorsPlugin()
-    ]
-  }
-};
 const defaultConfig = {
   node: {
     fs: false
@@ -36,6 +26,16 @@ const defaultConfig = {
   }
 , resolve: {
     extensions: ['', '.js', '.jsx']
+  }
+};
+const configs = {
+  local: {
+    host: '127.0.0.1'
+  , port: 4000
+  , plugins: [
+      new webpack.HotModuleReplacementPlugin()
+    , new webpack.NoErrorsPlugin()
+    ]
   }
 };
 
