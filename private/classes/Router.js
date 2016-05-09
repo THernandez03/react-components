@@ -6,13 +6,17 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import express from 'express';
+import Class from '~/classes/Class';
 import { mixin } from '~/utils/mixin';
 import packageJson from '~/../package.json';
 import webpackConfig from '~/config/webpack';
-import Class from '~/classes/Class';
 
 import Reducers from '~/reducers/';
 import App from '~/App';
+
+const devPath = (webpackConfig.host) ?
+  `http://${webpackConfig.host}:${webpackConfig.port}` : ''
+;
 
 /**
  * [mixin description]
@@ -29,12 +33,11 @@ export default class Router extends mixin(Class, express.Router){
   constructor(options){
     options = {
       started: new Date()
-    , devPath: `http://${webpackConfig.host}:${webpackConfig.port}`
+    , devPath
     , ...options
     };
     super(options);
     const router = this.supers[0];
-    const devPath = options.devPath;
 
     router.get('/version', this.getVersion.bind(this));
     router.get('/server/*', (req, res) => {
