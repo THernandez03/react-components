@@ -31,7 +31,7 @@ export default class App extends React.Component {
             <IndexRoute component={Views.Home}/>
             <Route path='about' component={Views.About}/>
           </Route>
-          <Route path='*' component={Layouts.E404}/>
+          <Route path='*' component={Layouts.Error}/>
         </Router>
       </Provider>
     )

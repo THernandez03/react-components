@@ -1,7 +1,7 @@
 import Main from '~/layouts/Main';
-import E404 from '~/layouts/E404';
+import Error from '~/layouts/Error';
 
 export default {
   Main
-, E404
+, Error
 }
