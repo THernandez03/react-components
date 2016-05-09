@@ -13,9 +13,9 @@ const initialState = window.__InitialState;
 const store = createStore(Reducers, initialState, compose(
   applyMiddleware(thunk, logger)
 , (
-  typeof window === 'object' &&
-  typeof window.devToolsExtension !== 'undefined'
-) ? window.devToolsExtension() : (fn) => { return fn }
+    typeof window === 'object' &&
+    typeof window.devToolsExtension !== 'undefined'
+  ) ? window.devToolsExtension() : (fn) => { return fn }
 ));
 const history = syncHistoryWithStore(browserHistory, store);
 
