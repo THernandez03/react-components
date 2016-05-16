@@ -1,7 +1,7 @@
-import Main from '~/layouts/Main';
-import Error from '~/layouts/Error';
+import Home from '~/layouts/Home';
+import About from '~/layouts/About';
 
 export default {
-  Main
-, Error
+  About
+, Home
 }

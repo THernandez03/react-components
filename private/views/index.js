@@ -1,7 +1,7 @@
-import Home from '~/views/Home';
-import About from '~/views/About';
+import Main from '~/views/Main';
+import Error from '~/views/Error';
 
 export default {
-  About
-, Home
+  Main
+, Error
 }

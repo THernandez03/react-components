@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import Layouts from '~/layouts/';
 import Views from '~/views/';
+import Layouts from '~/layouts/';
 
 /**
  * Main class
@@ -27,11 +27,11 @@ export default class App extends React.Component {
     return (
       <Provider store={this.props.store}>
         <Router history={this.props.history}>
-          <Route path='/' component={Layouts.Main}>
-            <IndexRoute component={Views.Home}/>
-            <Route path='about' component={Views.About}/>
+          <Route path='/' component={Views.Main}>
+            <IndexRoute component={Layouts.Home}/>
+            <Route path='about' component={Layouts.About}/>
           </Route>
-          <Route path='*' component={Layouts.Error}/>
+          <Route path='*' component={Views.Error}/>
         </Router>
       </Provider>
     )
