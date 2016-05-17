@@ -19,6 +19,13 @@ const store = createStore(Reducers, initialState, compose(
 ));
 const history = syncHistoryWithStore(browserHistory, store);
 
+if(module.hot){
+  module.hot.accept('./reducers/', () => {
+    const nextRootReducer = require('./reducers/index').default;
+    store.replaceReducer(nextRootReducer);
+  });
+}
+
 ReactDOM.render(
   <App store={store} history={history}/>
 , document.getElementById('app')
