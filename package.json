@@ -50,7 +50,7 @@
     "server": "nodemon -i public server.js",
     "webpack": "nodemon -w private/config webpack.js",
     "docs": "node ./node_modules/esdoc/out/src/ESDocCLI.js -c ./.esdoc",
-    "test": "node ./node_modules/karma/bin/karma.js start"
+    "test": "node ./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
