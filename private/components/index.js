@@ -1,4 +1,4 @@
-import Simple from '~/components/simple';
+import Simple from './simple';
 
 export default {
   Simple

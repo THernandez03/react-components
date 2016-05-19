@@ -1,4 +1,4 @@
-import config from '~/config/webpack';
+import config from './webpack';
 
 const defaultConfig = {
   hot: true

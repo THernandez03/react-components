@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import Views from '~/views/';
-import Layouts from '~/layouts/';
+import Views from './views/';
+import Layouts from './layouts/';
 
 /**
  * Main class

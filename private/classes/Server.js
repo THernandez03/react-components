@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import Class from '~/classes/Class';
-import { writeFile, tmpDir } from '~/utils/fs';
+import Class from './Class';
+import { writeFile, tmpDir } from '../utils/fs';
 
 /**
  * Describe a Server

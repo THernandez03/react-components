@@ -1,4 +1,4 @@
-import { __ENV__ } from '~/config/envs';
+import { __ENV__ } from './envs';
 
 const configs = {
   local: {

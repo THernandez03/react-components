@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import * as envs from '~/config/envs';
+import * as envs from './envs';
 
 const defaultConfig = {
   node: {

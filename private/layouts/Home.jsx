@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import DumbSimple from '~/components/dumb/simple';
-import Simple from '~/components/simple';
+import DumbSimple from '../components/dumb/simple';
+import Simple from '../components/simple';
 
 /**
  * Main class

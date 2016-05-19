@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import WebpackServer from 'webpack-dev-server';
-import Server from '~/classes/Server';
-import config from '~/config/webpack';
-import configServer from '~/config/webpack-server';
-import { writeFile } from '~/utils/fs';
+import Server from './Server';
+import config from '../config/webpack';
+import configServer from '../config/webpack-server';
+import { writeFile } from '../utils/fs';
 
 /**
  *

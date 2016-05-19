@@ -1,5 +1,5 @@
-import Main from '~/views/Main';
-import Error from '~/views/Error';
+import Main from './Main';
+import Error from './Error';
 
 export default {
   Main

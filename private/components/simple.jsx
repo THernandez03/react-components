@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import Simple from '~/components/dumb/simple';
-import { addItem } from '~/actions/';
+import Simple from './dumb/simple';
+import { addItem } from '../actions/';
 
 export default connect(
   () => {
