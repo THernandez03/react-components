@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import * as envs from './envs';
+import * as envs from '~/config/envs';
 
 const defaultConfig = {
   node: {
@@ -31,7 +31,7 @@ const defaultConfig = {
 const configs = {
   local: {
     host: '127.0.0.1'
-  , port: 4000
+  , port: 4001
   , plugins: [
       new webpack.HotModuleReplacementPlugin()
     , new webpack.NoErrorsPlugin()

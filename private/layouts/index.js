@@ -1,5 +1,5 @@
-import Home from './Home';
-import About from './About';
+import Home from '~/layouts/Home';
+import About from '~/layouts/About';
 
 export default {
   About

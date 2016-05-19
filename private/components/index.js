@@ -1,5 +1,5 @@
-import Simple from './simple';
+import Example from './Example/'
 
 export default {
-  Simple
+... Example
 };

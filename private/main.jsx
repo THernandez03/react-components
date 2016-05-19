@@ -6,8 +6,8 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import thunk from 'redux-thunk';
 import logger from 'redux-diff-logger';
 
-import Reducers from './reducers/';
-import App from './App';
+import Reducers from '~/reducers/';
+import App from '~/App';
 
 const initialState = window.__InitialState;
 const store = createStore(Reducers, initialState, compose(

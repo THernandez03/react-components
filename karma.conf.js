@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
     basePath: ''
   , frameworks: ['jasmine']
-  , files: ['tests/setup.js', 'tests/**/*.spec.js']
+  , files: ['tests/setup.js', 'private/components/**/*.spec.js']
   , exclude: []
   , plugins: [
       'karma-jasmine'
@@ -11,7 +11,7 @@ module.exports = function(config) {
     , 'karma-babel-preprocessor'
     ]
   , preprocessors: {
-      'tests/**/*.spec.js': ['babel']
+      'private/components/**/*.spec.js': ['babel']
     }
   , reporters: ['dots']
   , port: 9876

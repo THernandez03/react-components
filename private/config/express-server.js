@@ -1,8 +1,8 @@
-import { __ENV__ } from './envs';
+import { __ENV__ } from '~/config/envs';
 
 const configs = {
   local: {
-    port: 3000
+    port: 3001
   }
 , development: {
     port: 80
