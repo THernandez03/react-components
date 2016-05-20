@@ -1,5 +1,1 @@
-import Example from './Example/'
-
-export default {
-... Example
-};
+export { Example } from './Example/';

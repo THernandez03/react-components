@@ -1,7 +1,5 @@
 import React from 'react';
-import Components from '~/components/';
-
-const Example = Components.Example;
+import { Example } from '../components/';
 
 /**
  * Main class
