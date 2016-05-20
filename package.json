@@ -18,8 +18,7 @@
     "react-dom": "^15.0.0",
     "react-tap-event-plugin": "^1.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
@@ -44,6 +43,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-jasmine-runner-reporter": "^0.2.0",
     "karma-phantomjs-launcher": "^1.0.0",
+    "material-ui": "^0.15.0",
     "nodemon": "^1.8.1",
     "parallelshell": "^2.0.0",
     "phantomjs-prebuilt": "^2.1.7",
