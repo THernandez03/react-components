@@ -4,7 +4,7 @@ import { Example } from '../components/';
 /**
  * Main class
  */
-export default class Main extends React.Component {
+export default class Home extends React.Component {
   static propTypes = {
   };
   static defaultProps = {
@@ -20,9 +20,7 @@ export default class Main extends React.Component {
    */
   render(){
     return (
-      <div>
-        <Example/>
-      </div>
+      <Example/>
     )
   }
 }

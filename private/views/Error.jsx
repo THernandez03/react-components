@@ -2,7 +2,7 @@ import React from 'react';
 /**
  * NoMatch class
  */
-export default class E404 extends React.Component {
+export default class Error extends React.Component {
   static propTypes = {
   };
   static defaultProps = {
