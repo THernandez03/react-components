@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Main class
  */
-export default class Counter extends React.Component {
+export default class CounterLayout extends React.Component {
   static propTypes = {
   };
   static defaultProps = {

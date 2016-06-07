@@ -1,9 +1,10 @@
 import React from 'react';
+import { Card } from '../components/Card';
 
 /**
  * Main class
  */
-export default class Card extends React.Component {
+export default class CardLayout extends React.Component {
   static propTypes = {
   };
   static defaultProps = {
@@ -19,7 +20,7 @@ export default class Card extends React.Component {
    */
   render(){
     return (
-      <h1>Hello Card</h1>
+      <Card/>
     )
   }
 }

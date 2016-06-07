@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import { Main, Error } from './views/';
-import { Home, Card, Counter, Deck, Field, Hand } from './layouts/';
+import { Home, CardLayout, CounterLayout, DeckLayout, FieldLayout, HandLayout } from './layouts/';
 
 /**
  * Main class
@@ -29,11 +29,11 @@ export default class App extends React.Component {
         <Router history={this.props.history}>
           <Route path='/' component={Main}>
             <IndexRoute component={Home}/>
-            <Route path='Card' component={Card}/>
-            <Route path='Counter' component={Counter}/>
-            <Route path='Deck' component={Deck}/>
-            <Route path='Field' component={Field}/>
-            <Route path='Hand' component={Hand}/>
+            <Route path='Card' component={CardLayout}/>
+            <Route path='Counter' component={CounterLayout}/>
+            <Route path='Deck' component={DeckLayout}/>
+            <Route path='Field' component={FieldLayout}/>
+            <Route path='Hand' component={HandLayout}/>
           </Route>
           <Route path='*' component={Error}/>
         </Router>

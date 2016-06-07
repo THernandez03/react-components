@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Main class
  */
-export default class Deck extends React.Component {
+export default class DeckLayout extends React.Component {
   static propTypes = {
   };
   static defaultProps = {

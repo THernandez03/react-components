@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Main class
  */
-export default class Hand extends React.Component {
+export default class HandLayout extends React.Component {
   static propTypes = {
   };
   static defaultProps = {

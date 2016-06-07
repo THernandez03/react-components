@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Main class
  */
-export default class Field extends React.Component {
+export default class FieldLayout extends React.Component {
   static propTypes = {
   };
   static defaultProps = {

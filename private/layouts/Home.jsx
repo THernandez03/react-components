@@ -1,5 +1,4 @@
 import React from 'react';
-import { Example } from '../components/';
 
 /**
  * Main class
@@ -20,7 +19,7 @@ export default class Home extends React.Component {
    */
   render(){
     return (
-      <Example/>
+      <h1>Home</h1>
     )
   }
 }

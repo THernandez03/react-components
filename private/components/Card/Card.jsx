@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Example extends React.Component {
+export default class Card extends React.Component {
   static propTypes = {
     text: React.PropTypes.string
   , onClick: React.PropTypes.func
